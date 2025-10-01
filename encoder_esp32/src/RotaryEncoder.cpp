@@ -131,3 +131,24 @@ unsigned long RotaryEncoder::getRPM() {
     unsigned long t = max(timeBetweenLastPositions, timeToLastPosition);
     return 60000.0 / ((float)(t * 20));
 }
+
+void RotaryEncoder::setWheelDiameter(float value) {
+    if (value <= 0) return;
+
+    this->wheelDiameter = value;
+}
+
+void RotaryEncoder::setCPR(int64_t value) {
+    if (value <= 0) return;
+
+    this->CPR = value;
+}
+
+double RotaryEncoder::getLinearSpeed() {
+    // meters per second
+    return (((this->wheelDiameter * PI) / 60.0) * this->getRPM()) / 10.0;
+}
+
+long double RotaryEncoder::getOdometry() {
+    return ((this->wheelDiameter * PI) * (this->getPosition() * 1.0 / (this->CPR * 1.0)));
+}

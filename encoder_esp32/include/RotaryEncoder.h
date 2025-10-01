@@ -49,6 +49,18 @@ class RotaryEncoder {
     // Returns the RPM
     unsigned long getRPM();
 
+    // Returns the linear speed in meters per second
+    double getLinearSpeed();
+
+    // Returns the odometry in centimeters
+    long double getOdometry();
+
+    // Sets the counts per revolution
+    void setCPR(int64_t value);
+
+    // Sets the wheel diameter in centimeters
+    void setWheelDiameter(float wheelDiameter);
+
    private:
     int _pin1, _pin2;  // Arduino pins used for the encoder.
 
@@ -62,6 +74,9 @@ class RotaryEncoder {
 
     unsigned long _positionExtTime;      // The time the last position change was detected.
     unsigned long _positionExtTimePrev;  // The time the previous position change was detected.
+
+    int64_t CPR;         // Counts per revolution
+    float wheelDiameter; // The wheel diameter in centimeters
 };
 
 #endif
