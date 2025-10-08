@@ -192,7 +192,7 @@ void ESP32Encoder::attach(int a, int b, encType et) {
     pcnt_unit_config(&r_enc_config);
 
     // Filter out bounces and noise
-    setFilter(250);  // Filter Runt Pulses
+    setFilter(1023);  // Filter Runt Pulses
 
     /* Enable events on maximum and minimum limit values */
     pcnt_event_enable(unit, PCNT_EVT_H_LIM);
@@ -307,8 +307,8 @@ double ESP32Encoder::getRPM() {
 }
 
 double ESP32Encoder::getLinearSpeed() {
-    // meters per second
-    return (((this->wheelDiameter * PI) / 60.0) * this->getRPM()) / 10.0;
+    // Linear speed in cm/s: (wheel circumference * RPM) / 60
+    return (this->wheelDiameter * PI * this->getRPM()) / 60.0;
 }
 
 int64_t ESP32Encoder::clearCount() {

@@ -145,8 +145,8 @@ void RotaryEncoder::setCPR(int64_t value) {
 }
 
 double RotaryEncoder::getLinearSpeed() {
-    // meters per second
-    return (((this->wheelDiameter * PI) / 60.0) * this->getRPM()) / 10.0;
+    // Linear speed in cm/s: (wheel circumference * RPM) / 60
+    return (this->wheelDiameter * PI * this->getRPM()) / 60.0;
 }
 
 long double RotaryEncoder::getOdometry() {

@@ -7,52 +7,95 @@
 #define CPR 600                       // encoder cycles per revolution
 #define WHEEL_DIAMETER_CM 0.77        // centimeters
 
-RotaryEncoder *rotary_encoder = nullptr;
-ESP32Encoder *esp32_encoder = nullptr;
-volatile int last_rotary_encoder_pos = 0;
-volatile int last_esp32_encoder_pos = 0;
+RotaryEncoder *rotary_enc = nullptr;
+volatile int last_rotary_enc_pos = 0;
+
+ESP32Encoder *esp32_enc_sing = nullptr;
+volatile int last_esp32_enc_sing_pos = 0;
+
+ESP32Encoder *esp32_enc_half = nullptr;
+volatile int last_esp32_enc_half_pos = 0;
+
+ESP32Encoder *esp32_enc_full = nullptr;
+volatile int last_esp32_enc_full_pos = 0;
+
 
 void checkPosition() {
-    rotary_encoder->tick();
+    rotary_enc->tick();
 }
 
 void setup() {
-    rotary_encoder = new RotaryEncoder(ENCODER0PINA, ENCODER0PINB, RotaryEncoder::LatchMode::FOUR3);
+    rotary_enc = new RotaryEncoder(ENCODER0PINA, ENCODER0PINB, RotaryEncoder::LatchMode::FOUR3);
     attachInterrupt(digitalPinToInterrupt(ENCODER0PINA), checkPosition, CHANGE);
     attachInterrupt(digitalPinToInterrupt(ENCODER0PINB), checkPosition, CHANGE);
-    rotary_encoder->setCPR(CPR);
-    rotary_encoder->setWheelDiameter(WHEEL_DIAMETER_CM);
+    rotary_enc->setCPR(CPR);
+    rotary_enc->setWheelDiameter(WHEEL_DIAMETER_CM);
+    last_rotary_enc_pos = rotary_enc->getPosition();
 
-    esp32_encoder = new ESP32Encoder(CPR, 50, false);
     ESP32Encoder::useInternalWeakPullResistors = puType::up;
-    esp32_encoder->attachSingleEdge(ENCODER0PINA, ENCODER0PINB);
-    esp32_encoder->clearCount();
-    esp32_encoder->setCPR(CPR);
-    esp32_encoder->setWheelDiameter(WHEEL_DIAMETER_CM);
 
-    last_rotary_encoder_pos = rotary_encoder->getPosition();
-    last_esp32_encoder_pos = esp32_encoder->getCount();
+    esp32_enc_sing = new ESP32Encoder(CPR, 50, false);
+    esp32_enc_sing->attachSingleEdge(ENCODER0PINA, ENCODER0PINB);
+    esp32_enc_sing->clearCount();
+    esp32_enc_sing->setCPR(CPR);
+    esp32_enc_sing->setWheelDiameter(WHEEL_DIAMETER_CM);
+    last_esp32_enc_sing_pos = esp32_enc_sing->getCount();
+
+    esp32_enc_half = new ESP32Encoder(CPR, 50, false);
+    esp32_enc_half->attachHalfQuad(ENCODER0PINA, ENCODER0PINB);
+    esp32_enc_half->clearCount();
+    esp32_enc_half->setCPR(CPR);
+    esp32_enc_half->setWheelDiameter(WHEEL_DIAMETER_CM);
+    last_esp32_enc_half_pos = esp32_enc_half->getCount();
+
+    esp32_enc_full = new ESP32Encoder(CPR, 50, false);
+    esp32_enc_full->attachFullQuad(ENCODER0PINA, ENCODER0PINB);
+    esp32_enc_full->clearCount();
+    esp32_enc_full->setCPR(CPR);
+    esp32_enc_full->setWheelDiameter(WHEEL_DIAMETER_CM);
+    last_esp32_enc_full_pos = esp32_enc_full->getCount();
 
     Serial.begin(115200);
+
+    Serial.println("Starting...");
 }
 
 void loop() {
-    int rotary_encoder_pos = rotary_encoder->getPosition();
-    int esp32_encoder_pos = esp32_encoder->getCount();
+    int rotary_enc_pos = rotary_enc->getPosition();
+    int esp32_enc_sing_pos = esp32_enc_sing->getCount();
+    int esp32_enc_half_pos = esp32_enc_half->getCount();
+    int esp32_enc_full_pos = esp32_enc_full->getCount();
 
-    if (rotary_encoder_pos != last_rotary_encoder_pos || esp32_encoder_pos != last_esp32_encoder_pos) {
-        double rotary_encoder_rpm = rotary_encoder->getRPM();
-        double rotary_encoder_odom_cm = rotary_encoder->getOdometry();
-        float rotary_encoder_linearspeed = rotary_encoder->getLinearSpeed();
-        Serial.println("RotaryEncoder\todom(cm):" + String((double)rotary_encoder_odom_cm) + "\tlin(m/s):" + String(rotary_encoder_linearspeed) + "\trpm:" + String(rotary_encoder_rpm) + "\tpos:" + String(rotary_encoder_pos));
+    if (
+        rotary_enc_pos != last_rotary_enc_pos
+        || esp32_enc_sing_pos != last_esp32_enc_sing_pos
+        || esp32_enc_half_pos != last_esp32_enc_half_pos
+        || esp32_enc_full_pos != last_esp32_enc_full_pos
+    ) {
+        double rotary_enc_rpm = rotary_enc->getRPM();
+        double rotary_enc_odom_cm = rotary_enc->getOdometry();
+        float rotary_enc_linearspeed = rotary_enc->getLinearSpeed();
+        Serial.println("rotary_enc\todom(cm):" + String((double)rotary_enc_odom_cm) + "\tlin(cm/s):" + String(rotary_enc_linearspeed) + "\trpm:" + String(rotary_enc_rpm) + "\tpos:" + String(rotary_enc_pos));
     
-        double esp32_encoder_rpm = esp32_encoder->getRPM();
-        long double esp32_encoder_odom = esp32_encoder->getOdometry();
-        float esp32_encoder_linearspeed = esp32_encoder->getLinearSpeed();
-        Serial.println("ESP32Encoder\todom(cm):" + String((double)esp32_encoder_odom) + "\tlin(m/s):" + String(esp32_encoder_linearspeed) + "\trpm:" + String(esp32_encoder_rpm) + "\tpos:" + String(esp32_encoder_pos));
+        double esp32_enc_sing_rpm = esp32_enc_sing->getRPM();
+        long double esp32_enc_sing_odom = esp32_enc_sing->getOdometry();
+        float esp32_enc_sing_linearspeed = esp32_enc_sing->getLinearSpeed();
+        Serial.println("esp32_enc_sing\todom(cm):" + String((double)esp32_enc_sing_odom) + "\tlin(cm/s):" + String(esp32_enc_sing_linearspeed) + "\trpm:" + String(esp32_enc_sing_rpm) + "\tpos:" + String(esp32_enc_sing_pos));
 
-        last_rotary_encoder_pos = rotary_encoder_pos;
-        last_esp32_encoder_pos = esp32_encoder_pos;
+        double esp32_enc_half_rpm = esp32_enc_half->getRPM();
+        long double esp32_enc_half_odom = esp32_enc_half->getOdometry();
+        float esp32_enc_half_linearspeed = esp32_enc_half->getLinearSpeed();
+        Serial.println("esp32_enc_half\todom(cm):" + String((double)esp32_enc_half_odom/2) + "\tlin(cm/s):" + String(esp32_enc_half_linearspeed) + "\trpm:" + String(esp32_enc_half_rpm) + "\tpos:" + String(esp32_enc_half_pos));
+
+        double esp32_enc_full_rpm = esp32_enc_full->getRPM();
+        long double esp32_enc_full_odom = esp32_enc_full->getOdometry();
+        float esp32_enc_full_linearspeed = esp32_enc_full->getLinearSpeed();
+        Serial.println("esp32_enc_full\todom(cm):" + String((double)esp32_enc_full_odom/4) + "\tlin(cm/s):" + String(esp32_enc_full_linearspeed) + "\trpm:" + String(esp32_enc_full_rpm) + "\tpos:" + String(esp32_enc_full_pos));
+
+        last_rotary_enc_pos = rotary_enc_pos;
+        last_esp32_enc_sing_pos = esp32_enc_sing_pos;
+        last_esp32_enc_half_pos = esp32_enc_half_pos;
+        last_esp32_enc_full_pos = esp32_enc_full_pos;
 
         Serial.println("---------------------------------------------------");
     }

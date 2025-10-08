@@ -1,0 +1,298 @@
+sucesso_rotary_enc_esp32_enc_sing_esp32_enc_half_falha_esp32_enc_full
+
+---------------------------------------------------
+rotary_enc      odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_sing  odom(cm):-109.96        lin(cm/s):0.00  rpm:0.00        pos:-27273
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-54545
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.01        pos:-109088
+---------------------------------------------------
+rotary_enc      odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.05        pos:-27272
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.05        pos:-54544
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.05        pos:-109087
+---------------------------------------------------
+rotary_enc      odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-54544
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.03  rpm:0.83        pos:-109086
+---------------------------------------------------
+rotary_enc      odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.03  rpm:0.83        pos:-54543
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.03  rpm:0.83        pos:-109085
+---------------------------------------------------
+rotary_enc      odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.01  rpm:0.31        pos:-27271
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.01  rpm:0.31        pos:-54542
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.03  rpm:0.62        pos:-109083
+---------------------------------------------------
+rotary_enc      odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-54542
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.01  rpm:0.31        pos:-109082
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.16  rpm:4.00        pos:-27270
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):-0.03 rpm:-0.83       pos:-27272
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-54542
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-109082
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.60  rpm:15.00       pos:-27270
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_half  odom(cm):-109.95        lin(cm/s):0.03  rpm:0.83        pos:-54541
+esp32_enc_full  odom(cm):-109.95        lin(cm/s):0.03  rpm:0.83        pos:-109081
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.32  rpm:8.00        pos:-27269
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.01  rpm:0.31        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.03  rpm:0.62        pos:-54539
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):0.06  rpm:1.56        pos:-109076
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):1.33  rpm:33.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.94        lin(cm/s):0.07  rpm:1.65        pos:-27269
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.10  rpm:2.48        pos:-54536
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):0.17  rpm:4.13        pos:-109071
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.48  rpm:12.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.94        lin(cm/s):-0.02 rpm:-0.45       pos:-27270
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):-0.04 rpm:-0.90       pos:-54538
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.05 rpm:-1.36       pos:-109074
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):1.09  rpm:27.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):-0.03 rpm:-0.83       pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.00        pos:-54538
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.00        pos:-109074
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.73  rpm:18.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.00        pos:-54538
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.03 rpm:-0.83       pos:-109075
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.28  rpm:7.00        pos:-27268
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):-0.02 rpm:-0.45       pos:-54539
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.02 rpm:-0.45       pos:-109076
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.20  rpm:5.00        pos:-27269
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.00        pos:-54539
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.02 rpm:-0.45       pos:-109077
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.12  rpm:3.00        pos:-27269
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):-0.00 rpm:-0.12       pos:-27272
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):-0.00 rpm:-0.12       pos:-54540
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.00 rpm:-0.12       pos:-109078
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):1.25  rpm:31.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.08        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.01  rpm:0.23        pos:-54537
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):0.02  rpm:0.45        pos:-109073
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):1.94  rpm:48.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):-0.03 rpm:-0.83       pos:-54538
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.10 rpm:-2.48       pos:-109075
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.65  rpm:16.00       pos:-27268
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):-0.03 rpm:-0.83       pos:-54539
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.03 rpm:-0.83       pos:-109076
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.08  rpm:2.00        pos:-27269
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27271
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.00        pos:-54539
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.00 rpm:-0.11       pos:-109077
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.08  rpm:2.00        pos:-27269
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):-0.00 rpm:-0.11       pos:-27272
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):-0.00 rpm:-0.11       pos:-54540
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):-0.00 rpm:-0.11       pos:-109078
+---------------------------------------------------
+rotary_enc      odom(cm):-109.94        lin(cm/s):0.04  rpm:1.00        pos:-27269
+esp32_enc_sing  odom(cm):-109.95        lin(cm/s):0.00  rpm:0.00        pos:-27272
+esp32_enc_half  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.12        pos:-54539
+esp32_enc_full  odom(cm):-109.94        lin(cm/s):0.00  rpm:0.12        pos:-109077
+---------------------------------------------------
+rotary_enc      odom(cm):-108.32        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-26867
+esp32_enc_sing  odom(cm):-107.98        lin(cm/s):16.13 rpm:400.00      pos:-26789
+esp32_enc_half  odom(cm):-108.46        lin(cm/s):24.46 rpm:606.61      pos:-54010
+esp32_enc_full  odom(cm):-108.50        lin(cm/s):47.12 rpm:1168.85     pos:-108075
+---------------------------------------------------
+rotary_enc      odom(cm):-102.67        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-25466
+esp32_enc_sing  odom(cm):-102.03        lin(cm/s):48.74 rpm:1209.02     pos:-25313
+esp32_enc_half  odom(cm):-103.12        lin(cm/s):87.51 rpm:2170.49     pos:-51419
+esp32_enc_full  odom(cm):-103.62        lin(cm/s):159.98        rpm:3968.03     pos:-103323
+---------------------------------------------------
+rotary_enc      odom(cm):-96.45 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-23924
+esp32_enc_sing  odom(cm):-95.79 lin(cm/s):50.71 rpm:1257.72     pos:-23768
+esp32_enc_half  odom(cm):-96.77 lin(cm/s):102.52        rpm:2542.74     pos:-48330
+esp32_enc_full  odom(cm):-97.96 lin(cm/s):183.95        rpm:4562.60     pos:-97756
+---------------------------------------------------
+rotary_enc      odom(cm):-89.93 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-22305
+esp32_enc_sing  odom(cm):-89.25 lin(cm/s):53.17 rpm:1318.70     pos:-22148
+esp32_enc_half  odom(cm):-90.23 lin(cm/s):106.30        rpm:2636.59     pos:-45089
+esp32_enc_full  odom(cm):-92.34 lin(cm/s):182.97        rpm:4538.21     pos:-92181
+---------------------------------------------------
+rotary_enc      odom(cm):-83.41 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-20688
+esp32_enc_sing  odom(cm):-82.74 lin(cm/s):52.94 rpm:1313.01     pos:-20530
+esp32_enc_half  odom(cm):-83.80 lin(cm/s):104.40        rpm:2589.43     pos:-41853
+esp32_enc_full  odom(cm):-86.51 lin(cm/s):189.56        rpm:4701.63     pos:-86400
+---------------------------------------------------
+rotary_enc      odom(cm):-77.30 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-19174
+esp32_enc_sing  odom(cm):-76.61 lin(cm/s):49.79 rpm:1234.96     pos:-19011
+esp32_enc_half  odom(cm):-77.64 lin(cm/s):100.24        rpm:2486.18     pos:-38816
+esp32_enc_full  odom(cm):-80.63 lin(cm/s):191.00        rpm:4737.40     pos:-80573
+---------------------------------------------------
+rotary_enc      odom(cm):-71.57 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-17752
+esp32_enc_sing  odom(cm):-70.89 lin(cm/s):46.48 rpm:1152.85     pos:-17588
+esp32_enc_half  odom(cm):-72.09 lin(cm/s):90.94 rpm:2255.74     pos:-35970
+esp32_enc_full  odom(cm):-75.10 lin(cm/s):179.92        rpm:4462.60     pos:-74950
+---------------------------------------------------
+rotary_enc      odom(cm):-65.82 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-16327
+esp32_enc_sing  odom(cm):-65.13 lin(cm/s):47.22 rpm:1171.31     pos:-16162
+esp32_enc_half  odom(cm):-66.35 lin(cm/s):94.08 rpm:2333.61     pos:-33146
+esp32_enc_full  odom(cm):-69.43 lin(cm/s):185.66        rpm:4604.92     pos:-69371
+---------------------------------------------------
+rotary_enc      odom(cm):-60.42 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-14985
+esp32_enc_sing  odom(cm):-59.73 lin(cm/s):44.32 rpm:1099.18     pos:-14820
+esp32_enc_half  odom(cm):-60.88 lin(cm/s):90.30 rpm:2239.67     pos:-30460
+esp32_enc_full  odom(cm):-63.97 lin(cm/s):179.11        rpm:4442.62     pos:-64007
+---------------------------------------------------
+rotary_enc      odom(cm):-55.01 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-13644
+esp32_enc_sing  odom(cm):-54.31 lin(cm/s):44.35 rpm:1100.00     pos:-13479
+esp32_enc_half  odom(cm):-55.48 lin(cm/s):87.81 rpm:2178.05     pos:-27780
+esp32_enc_full  odom(cm):-58.64 lin(cm/s):174.78        rpm:4335.25     pos:-58707
+---------------------------------------------------
+rotary_enc      odom(cm):-49.30 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-12227
+esp32_enc_sing  odom(cm):-48.60 lin(cm/s):46.79 rpm:1160.66     pos:-12062
+esp32_enc_half  odom(cm):-49.70 lin(cm/s):94.68 rpm:2348.36     pos:-24944
+esp32_enc_full  odom(cm):-53.04 lin(cm/s):183.41        rpm:4549.18     pos:-53220
+---------------------------------------------------
+rotary_enc      odom(cm):-42.67 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-10584
+esp32_enc_sing  odom(cm):-41.95 lin(cm/s):54.02 rpm:1339.84     pos:-10416
+esp32_enc_half  odom(cm):-43.04 lin(cm/s):108.30        rpm:2686.18     pos:-21653
+esp32_enc_full  odom(cm):-47.38 lin(cm/s):184.11        rpm:4566.67     pos:-47555
+---------------------------------------------------
+rotary_enc      odom(cm):-35.85 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-8893
+esp32_enc_sing  odom(cm):-35.12 lin(cm/s):55.49 rpm:1376.42     pos:-8720
+esp32_enc_half  odom(cm):-36.26 lin(cm/s):110.27        rpm:2734.96     pos:-18262
+esp32_enc_full  odom(cm):-41.68 lin(cm/s):185.20        rpm:4593.50     pos:-41926
+---------------------------------------------------
+rotary_enc      odom(cm):-29.54 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-7327
+esp32_enc_sing  odom(cm):-28.81 lin(cm/s):51.30 rpm:1272.36     pos:-7155
+esp32_enc_half  odom(cm):-29.93 lin(cm/s):102.86        rpm:2551.22     pos:-15130
+esp32_enc_full  odom(cm):-35.79 lin(cm/s):191.78        rpm:4756.91     pos:-36095
+---------------------------------------------------
+rotary_enc      odom(cm):-23.86 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-5918
+esp32_enc_sing  odom(cm):-23.13 lin(cm/s):46.22 rpm:1146.34     pos:-5744
+esp32_enc_half  odom(cm):-24.30 lin(cm/s):91.61 rpm:2272.36     pos:-12310
+esp32_enc_full  odom(cm):-30.17 lin(cm/s):182.74        rpm:4532.52     pos:-30457
+---------------------------------------------------
+rotary_enc      odom(cm):-18.20 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-4514
+esp32_enc_sing  odom(cm):-17.47 lin(cm/s):46.33 rpm:1149.18     pos:-4340
+esp32_enc_half  odom(cm):-18.64 lin(cm/s):93.46 rpm:2318.18     pos:-9501
+esp32_enc_full  odom(cm):-24.55 lin(cm/s):184.04        rpm:4564.75     pos:-24888
+---------------------------------------------------
+rotary_enc      odom(cm):-12.91 lin(cm/s):173160640.00  rpm:4294967295.00       pos:-3202
+esp32_enc_sing  odom(cm):-12.17 lin(cm/s):43.42 rpm:1077.05     pos:-3026
+esp32_enc_half  odom(cm):-13.34 lin(cm/s):87.63 rpm:2173.55     pos:-6874
+esp32_enc_full  odom(cm):-19.26 lin(cm/s):173.30        rpm:4298.36     pos:-19641
+---------------------------------------------------
+rotary_enc      odom(cm):-8.00  lin(cm/s):173160640.00  rpm:4294967295.00       pos:-1985
+esp32_enc_sing  odom(cm):-7.27  lin(cm/s):40.22 rpm:997.54      pos:-1809
+esp32_enc_half  odom(cm):-8.42  lin(cm/s):81.37 rpm:2018.18     pos:-4440
+esp32_enc_full  odom(cm):-14.35 lin(cm/s):161.14        rpm:3996.72     pos:-14774
+---------------------------------------------------
+rotary_enc      odom(cm):-3.75  lin(cm/s):173160640.00  rpm:4294967295.00       pos:-930
+esp32_enc_sing  odom(cm):-3.03  lin(cm/s):34.70 rpm:860.66      pos:-754
+esp32_enc_half  odom(cm):-4.48  lin(cm/s):65.17 rpm:1616.53     pos:-2330
+esp32_enc_full  odom(cm):-10.42 lin(cm/s):129.78        rpm:3219.01     pos:-10559
+---------------------------------------------------
+rotary_enc      odom(cm):-1.19  lin(cm/s):173160640.00  rpm:4294967295.00       pos:-294
+esp32_enc_sing  odom(cm):-0.48  lin(cm/s):21.30 rpm:528.33      pos:-119
+esp32_enc_half  odom(cm):-2.07  lin(cm/s):39.82 rpm:987.60      pos:-1059
+esp32_enc_full  odom(cm):-8.02  lin(cm/s):79.60 rpm:1974.38     pos:-8017
+---------------------------------------------------
+rotary_enc      odom(cm):-0.88  lin(cm/s):4.03  rpm:100.00      pos:-219
+esp32_enc_sing  odom(cm):-0.18  lin(cm/s):2.47  rpm:61.16       pos:-44
+esp32_enc_half  odom(cm):-1.83  lin(cm/s):4.29  rpm:106.31      pos:-909
+esp32_enc_full  odom(cm):-7.78  lin(cm/s):7.86  rpm:195.04      pos:-7717
+---------------------------------------------------
+rotary_enc      odom(cm):-0.91  lin(cm/s):4.48  rpm:111.00      pos:-225
+esp32_enc_sing  odom(cm):-0.20  lin(cm/s):-0.20 rpm:-4.96       pos:-50
+esp32_enc_half  odom(cm):-1.86  lin(cm/s):-0.40 rpm:-9.92       pos:-921
+esp32_enc_full  odom(cm):-7.80  lin(cm/s):-0.87 rpm:-21.49      pos:-7742
+---------------------------------------------------
+rotary_enc      odom(cm):-0.91  lin(cm/s):1.53  rpm:38.00       pos:-226
+esp32_enc_sing  odom(cm):-0.21  lin(cm/s):-0.07 rpm:-1.65       pos:-52
+esp32_enc_half  odom(cm):-1.86  lin(cm/s):-0.13 rpm:-3.31       pos:-925
+esp32_enc_full  odom(cm):-7.81  lin(cm/s):-0.20 rpm:-4.96       pos:-7749
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):1.05  rpm:26.00       pos:-227
+esp32_enc_sing  odom(cm):-0.21  lin(cm/s):-0.03 rpm:-0.83       pos:-53
+esp32_enc_half  odom(cm):-1.87  lin(cm/s):-0.03 rpm:-0.83       pos:-926
+esp32_enc_full  odom(cm):-7.81  lin(cm/s):-0.13 rpm:-3.31       pos:-7752
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):0.81  rpm:20.00       pos:-228
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):-0.03 rpm:-0.83       pos:-54
+esp32_enc_half  odom(cm):-1.87  lin(cm/s):-0.07 rpm:-1.65       pos:-928
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.07 rpm:-1.65       pos:-7755
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):0.65  rpm:16.00       pos:-228
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):0.00  rpm:0.00        pos:-54
+esp32_enc_half  odom(cm):-1.87  lin(cm/s):-0.03 rpm:-0.83       pos:-929
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.07 rpm:-1.65       pos:-7757
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):0.56  rpm:14.00       pos:-229
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):0.00  rpm:0.00        pos:-54
+esp32_enc_half  odom(cm):-1.87  lin(cm/s):0.00  rpm:0.00        pos:-929
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.03 rpm:-0.83       pos:-7758
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):0.52  rpm:13.00       pos:-229
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):-0.03 rpm:-0.83       pos:-55
+esp32_enc_half  odom(cm):-1.87  lin(cm/s):-0.03 rpm:-0.83       pos:-930
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.03 rpm:-0.83       pos:-7759
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):0.32  rpm:8.00        pos:-229
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):0.00  rpm:0.00        pos:-55
+esp32_enc_half  odom(cm):-1.87  lin(cm/s):0.00  rpm:0.00        pos:-930
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.03 rpm:-0.83       pos:-7760
+---------------------------------------------------
+rotary_enc      odom(cm):-0.92  lin(cm/s):0.24  rpm:6.00        pos:-229
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):0.00  rpm:0.00        pos:-55
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):-0.03 rpm:-0.83       pos:-931
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.03 rpm:-0.83       pos:-7761
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.16  rpm:4.00        pos:-230
+esp32_enc_sing  odom(cm):-0.22  lin(cm/s):0.00  rpm:0.00        pos:-55
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):0.00  rpm:0.00        pos:-931
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.02 rpm:-0.45       pos:-7762
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.16  rpm:4.00        pos:-230
+esp32_enc_sing  odom(cm):-0.23  lin(cm/s):-0.01 rpm:-0.24       pos:-56
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):-0.01 rpm:-0.24       pos:-932
+esp32_enc_full  odom(cm):-7.82  lin(cm/s):-0.01 rpm:-0.24       pos:-7763
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.12  rpm:3.00        pos:-230
+esp32_enc_sing  odom(cm):-0.23  lin(cm/s):0.00  rpm:0.00        pos:-56
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):0.00  rpm:0.00        pos:-932
+esp32_enc_full  odom(cm):-7.83  lin(cm/s):-0.01 rpm:-0.24       pos:-7764
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.04  rpm:1.00        pos:-230
+esp32_enc_sing  odom(cm):-0.23  lin(cm/s):0.00  rpm:0.00        pos:-56
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):-0.00 rpm:-0.12       pos:-933
+esp32_enc_full  odom(cm):-7.83  lin(cm/s):-0.00 rpm:-0.12       pos:-7765
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.00  rpm:0.00        pos:-231
+esp32_enc_sing  odom(cm):-0.23  lin(cm/s):0.00  rpm:0.00        pos:-56
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):0.00  rpm:0.00        pos:-933
+esp32_enc_full  odom(cm):-7.83  lin(cm/s):-0.00 rpm:-0.08       pos:-7766
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.00  rpm:0.00        pos:-231
+esp32_enc_sing  odom(cm):-0.23  lin(cm/s):-0.00 rpm:-0.04       pos:-57
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):-0.00 rpm:-0.04       pos:-934
+esp32_enc_full  odom(cm):-7.83  lin(cm/s):-0.00 rpm:-0.04       pos:-7767
+---------------------------------------------------
+rotary_enc      odom(cm):-0.93  lin(cm/s):0.00  rpm:0.00        pos:-231
+esp32_enc_sing  odom(cm):-0.23  lin(cm/s):0.00  rpm:0.00        pos:-57
+esp32_enc_half  odom(cm):-1.88  lin(cm/s):0.00  rpm:0.00        pos:-934
+esp32_enc_full  odom(cm):-7.83  lin(cm/s):-0.00 rpm:-0.02       pos:-7768
+---------------------------------------------------
