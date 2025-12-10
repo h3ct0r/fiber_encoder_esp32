@@ -60,6 +60,7 @@ class ESP32Encoder {
     void setCPR(int64_t value);
     void setFilter(uint16_t value);
     void setWheelDiameter(float wheelDiameter);
+    void reset();
     static ESP32Encoder* encoders[MAX_ESP32_ENCODERS];
     bool always_interrupt;
     gpio_num_t aPinNumber;

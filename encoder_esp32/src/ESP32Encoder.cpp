@@ -351,6 +351,17 @@ void ESP32Encoder::setCPR(int64_t value) {
 long double ESP32Encoder::getOdometry() {
     return ((this->wheelDiameter * PI) * (this->getCount() * 1.0 / (this->CPR * 1.0)));
 }
+
+void ESP32Encoder::reset() {
+    _ENTER_CRITICAL();
+    count = 0;
+    lastCount = 0;
+    lastCountTime = 0;
+    lastRPM = 0.0;
+    pcnt_counter_clear(unit);
+    _EXIT_CRITICAL();
+}
+
 #else
 #warning PCNT not supported on this SoC, this will likely lead to linker errors when using ESP32Encoder
 #endif  // SOC_PCNT_SUPPORTED

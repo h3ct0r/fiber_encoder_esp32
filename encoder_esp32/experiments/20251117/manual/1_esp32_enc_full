@@ -1,0 +1,13 @@
+11357 esp32_enc_full  odom(cm):0.63   lin(cm/s):0.22          rpm:5.50        pos:468         diff:468
+11479 esp32_enc_full  odom(cm):3.91   lin(cm/s):107.63        rpm:2669.67     pos:3400        diff:2932
+11602 esp32_enc_full  odom(cm):9.61   lin(cm/s):185.07        rpm:4590.24     pos:8908        diff:5508
+11725 esp32_enc_full  odom(cm):16.41  lin(cm/s):221.22        rpm:5486.99     pos:15506       diff:6598
+11849 esp32_enc_full  odom(cm):23.58  lin(cm/s):231.11        rpm:5732.26     pos:22758       diff:7252
+11971 esp32_enc_full  odom(cm):28.95  lin(cm/s):176.17        rpm:4369.67     pos:28185       diff:5427
+12094 esp32_enc_full  odom(cm):35.10  lin(cm/s):200.04        rpm:4961.79     pos:34253       diff:6068
+12216 esp32_enc_full  odom(cm):40.25  lin(cm/s):167.46        rpm:4153.66     pos:39540       diff:5287
+12348 esp32_enc_full  odom(cm):44.13  lin(cm/s):117.50        rpm:2914.39     pos:43503       diff:3963
+12480 esp32_enc_full  odom(cm):46.60  lin(cm/s):75.43         rpm:1870.99     pos:46192       diff:2689
+12600 esp32_enc_full  odom(cm):46.62  lin(cm/s):0.63          rpm:15.70       pos:46252       diff:60
+12721 esp32_enc_full  odom(cm):46.53  lin(cm/s):-2.93         rpm:-72.73      pos:46171       diff:-81
+12842 esp32_enc_full  odom(cm):46.53  lin(cm/s):-0.10         rpm:-2.48       pos:46162       diff:-9

@@ -152,3 +152,9 @@ double RotaryEncoder::getLinearSpeed() {
 long double RotaryEncoder::getOdometry() {
     return ((this->wheelDiameter * PI) * (this->getPosition() * 1.0 / (this->CPR * 1.0)));
 }
+
+void RotaryEncoder::reset() {
+    _position = 0;
+    _positionExt = 0;
+    _positionExtPrev = 0;
+}

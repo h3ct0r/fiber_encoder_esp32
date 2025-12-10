@@ -61,6 +61,9 @@ class RotaryEncoder {
     // Sets the wheel diameter in centimeters
     void setWheelDiameter(float wheelDiameter);
 
+    // Resets the enconder state
+    void reset();
+
    private:
     int _pin1, _pin2;  // Arduino pins used for the encoder.
 
