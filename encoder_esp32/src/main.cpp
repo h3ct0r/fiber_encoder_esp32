@@ -1,8 +1,11 @@
 #include <Arduino.h>
 #include <RotaryEncoder.h>
 #include <ESP32Encoder.h>
-#include <ros.h>
-#include <std_msgs/Float32.h>
+#include <micro_ros_platformio.h>
+#include <rcl/rcl.h>
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+#include <std_msgs/msg/float32.h>
 
 #define ENCODER0PINA 12               // white A
 #define ENCODER0PINB 14               // green B
@@ -26,9 +29,12 @@ volatile int last_esp32_enc_full_pos = 0;
 
 volatile unsigned long last_change_time = 0;
 
-ros::NodeHandle nh;
-std_msgs::Float32 odometry_msg;
-ros::Publisher pub_metric("theter_odometry", &odometry_msg);
+// micro-ROS objects
+rclc_support_t support;
+rcl_allocator_t allocator;
+rcl_node_t node;
+rcl_publisher_t publisher;
+std_msgs__msg__Float32 odometry_msg;
 long last_publish_time = 0;
 
 void checkPosition() {
@@ -88,9 +94,18 @@ void setup() {
         esp32_enc_sing->setCPR(CPR);
         esp32_enc_sing->setWheelDiameter(WHEEL_DIAMETER_CM);
 
-        // Initialize the ROS node and advertise the topic
-        nh.initNode();
-        nh.advertise(pub_metric);
+        // Initialize micro-ROS
+        set_microros_serial_transports(Serial);
+        delay(2000);
+
+        allocator = rcl_get_default_allocator();
+        rclc_support_init(&support, 0, NULL, &allocator);
+        rclc_node_init_default(&node, "theter_odometry_node", "", &support);
+        rclc_publisher_init_default(
+            &publisher,
+            &node,
+            ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32),
+            "theter_odometry");
     }
 
     Serial.begin(115200);
@@ -173,14 +188,13 @@ void loop() {
         if (millis() - last_publish_time > ROS_PUBLISH_INTERVAL) {
             long double esp32_enc_sing_odom = esp32_enc_sing->getOdometry();
             odometry_msg.data = (float)esp32_enc_sing_odom;
-            pub_metric.publish(&odometry_msg);
+            rcl_publish(&publisher, &odometry_msg, NULL);
             // Log for debugging on the serial monitor
             Serial.print("Theter odometry: ");
             Serial.print(odometry_msg.data);
             Serial.println(" cm");
             last_publish_time = millis();
         }
-        nh.spinOnce();
         delay(10);
     }
 }
