@@ -11,7 +11,7 @@
 #define ENCODER0PINB 14               // green B
 #define CPR 600                       // encoder cycles per revolution
 #define WHEEL_DIAMETER_CM 0.755        // centimeters
-#define ENVIRONMENT "production" // Change to "production" to enable ROS publishing
+#define ENVIRONMENT "prod" // Change to "prod" to enable ROS publishing
 #define ROS_PUBLISH_INTERVAL 1000 // Publish every 1 second
 
 
@@ -42,6 +42,7 @@ void checkPosition() {
 }
 
 void setup() {
+    Serial.begin(115200);
     /**
      * During development, several methods of reading the encoder are compared:
      * 1. Using the RotaryEncoder library with interrupts
@@ -53,6 +54,7 @@ void setup() {
      * analysis.
      */
     if (ENVIRONMENT == "dev") {
+        Serial.println("Starting...");
         rotary_enc = new RotaryEncoder(ENCODER0PINA, ENCODER0PINB, RotaryEncoder::LatchMode::FOUR3);
         attachInterrupt(digitalPinToInterrupt(ENCODER0PINA), checkPosition, CHANGE);
         attachInterrupt(digitalPinToInterrupt(ENCODER0PINB), checkPosition, CHANGE);
@@ -107,9 +109,6 @@ void setup() {
             ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32),
             "theter_odometry");
     }
-
-    Serial.begin(115200);
-    Serial.println("Starting...");
 }
 
 void loop() {
