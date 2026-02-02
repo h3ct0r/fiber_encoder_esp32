@@ -1,0 +1,13 @@
+11357 esp32_enc_sing  odom(cm):0.48   lin(cm/s):0.04        rpm:1.05        pos:118         diff:118
+11479 esp32_enc_sing  odom(cm):3.45   lin(cm/s):24.56       rpm:609.09      pos:850         diff:732
+11602 esp32_enc_sing  odom(cm):9.72   lin(cm/s):51.35       rpm:1273.77     pos:2399        diff:1549
+11725 esp32_enc_sing  odom(cm):17.34  lin(cm/s):61.95       rpm:1536.59     pos:4288        diff:1889
+11849 esp32_enc_sing  odom(cm):25.18  lin(cm/s):63.14       rpm:1566.13     pos:6233        diff:1945
+11971 esp32_enc_sing  odom(cm):32.32  lin(cm/s):58.08       rpm:1440.65     pos:8008        diff:1775
+12094 esp32_enc_sing  odom(cm):38.58  lin(cm/s):50.84       rpm:1260.98     pos:9560        diff:1552
+12216 esp32_enc_sing  odom(cm):43.90  lin(cm/s):43.27       rpm:1073.17     pos:10884       diff:1324
+12348 esp32_enc_sing  odom(cm):47.89  lin(cm/s):30.21       rpm:749.24      pos:11875       diff:991
+12480 esp32_enc_sing  odom(cm):50.59  lin(cm/s):20.62       rpm:511.45      pos:12547       diff:672
+12600 esp32_enc_sing  odom(cm):50.65  lin(cm/s):0.47        rpm:11.57       pos:12562       diff:15
+12721 esp32_enc_sing  odom(cm):50.57  lin(cm/s):-0.67       rpm:-16.53      pos:12542       diff:-20
+12842 esp32_enc_sing  odom(cm):50.55  lin(cm/s):-0.13       rpm:-3.31       pos:12538       diff:-4

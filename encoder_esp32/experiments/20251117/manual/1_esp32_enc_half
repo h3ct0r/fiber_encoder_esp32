@@ -1,0 +1,13 @@
+11357 esp32_enc_half  odom(cm):0.62   lin(cm/s):0.11          rpm:2.73        pos:234           diff:234
+11479 esp32_enc_half  odom(cm):3.89   lin(cm/s):53.54         rpm:1327.87     pos:1699          diff:1465
+11602 esp32_enc_half  odom(cm):10.39  lin(cm/s):106.44        rpm:2640.16     pos:4796          diff:3097
+11725 esp32_enc_half  odom(cm):18.02  lin(cm/s):124.00        rpm:3075.61     pos:8575          diff:3779
+11849 esp32_enc_half  odom(cm):25.80  lin(cm/s):125.57        rpm:3114.52     pos:12442         diff:3867
+11971 esp32_enc_half  odom(cm):32.86  lin(cm/s):114.76        rpm:2846.34     pos:15992         diff:3550
+12094 esp32_enc_half  odom(cm):39.05  lin(cm/s):100.66        rpm:2496.75     pos:19097         diff:3105
+12216 esp32_enc_half  odom(cm):44.22  lin(cm/s):84.73         rpm:2101.64     pos:21745         diff:2648
+12348 esp32_enc_half  odom(cm):48.10  lin(cm/s):58.83         rpm:1459.09     pos:23727         diff:1982
+12480 esp32_enc_half  odom(cm):50.58  lin(cm/s):37.57         rpm:931.82      pos:25071         diff:1344
+12600 esp32_enc_half  odom(cm):50.60  lin(cm/s):0.33          rpm:8.26        pos:25101         diff:30
+12721 esp32_enc_half  odom(cm):50.51  lin(cm/s):-1.47         rpm:-36.36      pos:25061         diff:-40
+12842 esp32_enc_half  odom(cm):50.51  lin(cm/s):-0.07         rpm:-1.65       pos:25056         diff:-5

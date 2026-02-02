@@ -1,0 +1,141 @@
+success_none_failure_all
+
+0   rotary_enc      odom(cm):2.07          lin(cm/s):0.00          rpm:0.00                pos:514
+1   rotary_enc      odom(cm):0.62          lin(cm/s):173160640.00  rpm:4294967295.00       pos:155
+2   rotary_enc      odom(cm):-4.87         lin(cm/s):173160640.00  rpm:4294967295.00       pos:-1208
+3   rotary_enc      odom(cm):-10.62        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-2633
+4   rotary_enc      odom(cm):-16.97        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-4208
+5   rotary_enc      odom(cm):-23.27        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-5772
+6   rotary_enc      odom(cm):-29.76        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-7382
+7   rotary_enc      odom(cm):-35.11        lin(cm/s):40.32         rpm:1000.00             pos:-8709
+8   rotary_enc      odom(cm):-39.17        lin(cm/s):15.12         rpm:375.00              pos:-9716
+9   rotary_enc      odom(cm):-39.70        lin(cm/s):1.01          rpm:25.00               pos:-9846
+10  rotary_enc      odom(cm):-45.72        lin(cm/s):2.14          rpm:53.00               pos:-11341
+11  rotary_enc      odom(cm):-48.31        lin(cm/s):1.13          rpm:28.00               pos:-11983
+12  rotary_enc      odom(cm):-56.02        lin(cm/s):60.48         rpm:1500.00             pos:-13896
+13  rotary_enc      odom(cm):-60.71        lin(cm/s):30.24         rpm:750.00              pos:-15058
+14  rotary_enc      odom(cm):-65.08        lin(cm/s):15.12         rpm:375.00              pos:-16141
+15  rotary_enc      odom(cm):-70.57        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-17504
+16  rotary_enc      odom(cm):-76.72        lin(cm/s):173160640.00  rpm:4294967295.00       pos:-19028
+17  rotary_enc      odom(cm):-78.13        lin(cm/s):1.89          rpm:47.00               pos:-19378
+18  rotary_enc      odom(cm):-78.10        lin(cm/s):12.10         rpm:300.00              pos:-19372
+19  rotary_enc      odom(cm):-78.08        lin(cm/s):4.64          rpm:115.00              pos:-19367
+20  rotary_enc      odom(cm):-78.07        lin(cm/s):1.77          rpm:44.00               pos:-19364
+21  rotary_enc      odom(cm):-78.07        lin(cm/s):1.37          rpm:34.00               pos:-19363
+22  rotary_enc      odom(cm):-78.07        lin(cm/s):0.73          rpm:18.00               pos:-19363
+23  rotary_enc      odom(cm):-78.06        lin(cm/s):0.48          rpm:12.00               pos:-19362
+24  rotary_enc      odom(cm):-78.06        lin(cm/s):0.48          rpm:12.00               pos:-19362
+25  rotary_enc      odom(cm):-78.06        lin(cm/s):0.28          rpm:7.00                pos:-19362
+26  rotary_enc      odom(cm):-78.06        lin(cm/s):0.16          rpm:4.00                pos:-19362
+27  rotary_enc      odom(cm):-78.06        lin(cm/s):0.08          rpm:2.00                pos:-19361
+28  rotary_enc      odom(cm):-78.06        lin(cm/s):0.08          rpm:2.00                pos:-19361
+29  rotary_enc      odom(cm):-78.06        lin(cm/s):0.04          rpm:1.00                pos:-19361
+30  rotary_enc      odom(cm):-78.06        lin(cm/s):0.00          rpm:0.00                pos:-19361
+31  rotary_enc      odom(cm):-78.05        lin(cm/s):0.00          rpm:0.00                pos:-19360
+
+---------------------------------------------------
+
+0   esp32_enc_sing  odom(cm):-0.34  lin(cm/s):0.00          rpm:0.00        pos:-84
+1   esp32_enc_sing  odom(cm):-1.80  lin(cm/s):-6.59         rpm:-163.51     pos:-442
+2   esp32_enc_sing  odom(cm):-7.31  lin(cm/s):-45.14        rpm:-1119.67    pos:-1805
+3   esp32_enc_sing  odom(cm):-13.06 lin(cm/s):-47.09        rpm:-1168.03    pos:-3231
+4   esp32_enc_sing  odom(cm):-19.42 lin(cm/s):-51.69        rpm:-1282.11    pos:-4807
+5   esp32_enc_sing  odom(cm):-25.77 lin(cm/s):-51.63        rpm:-1280.49    pos:-6383
+6   esp32_enc_sing  odom(cm):-32.34 lin(cm/s):-53.40        rpm:-1324.39    pos:-8010
+7   esp32_enc_sing  odom(cm):-39.56 lin(cm/s):-58.64        rpm:-1454.47    pos:-9797
+8   esp32_enc_sing  odom(cm):-47.07 lin(cm/s):-61.07        rpm:-1514.63    pos:-11663
+9   esp32_enc_sing  odom(cm):-53.75 lin(cm/s):-54.38        rpm:-1348.78    pos:-13336
+10  esp32_enc_sing  odom(cm):-53.35 lin(cm/s):3.21          rpm:79.67       pos:-13243
+11  esp32_enc_sing  odom(cm):-51.12 lin(cm/s):18.19         rpm:451.22      pos:-12684
+12  esp32_enc_sing  odom(cm):-53.07 lin(cm/s):-15.80        rpm:-391.87     pos:-13158
+13  esp32_enc_sing  odom(cm):-59.47 lin(cm/s):-52.02        rpm:-1290.24    pos:-14735
+14  esp32_enc_sing  odom(cm):-66.52 lin(cm/s):-56.93        rpm:-1412.10    pos:-16505
+15  esp32_enc_sing  odom(cm):-73.36 lin(cm/s):-55.53        rpm:-1377.24    pos:-18184
+16  esp32_enc_sing  odom(cm):-79.52 lin(cm/s):-50.12        rpm:-1243.09    pos:-19717
+17  esp32_enc_sing  odom(cm):-80.91 lin(cm/s):-11.50        rpm:-285.12     pos:-20069
+18  esp32_enc_sing  odom(cm):-80.88 lin(cm/s):0.23          rpm:5.79        pos:-20062
+19  esp32_enc_sing  odom(cm):-80.86 lin(cm/s):0.17          rpm:4.13        pos:-20057
+20  esp32_enc_sing  odom(cm):-80.86 lin(cm/s):0.07          rpm:1.65        pos:-20055
+21  esp32_enc_sing  odom(cm):-80.85 lin(cm/s):0.03          rpm:0.83        pos:-20054
+22  esp32_enc_sing  odom(cm):-80.85 lin(cm/s):0.03          rpm:0.83        pos:-20053
+23  esp32_enc_sing  odom(cm):-80.85 lin(cm/s):0.00          rpm:0.00        pos:-20053
+24  esp32_enc_sing  odom(cm):-80.85 lin(cm/s):0.00          rpm:0.00        pos:-20053
+25  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.02          rpm:0.45        pos:-20052
+26  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.00          rpm:0.00        pos:-20052
+27  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.00          rpm:0.00        pos:-20052
+28  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.00          rpm:0.00        pos:-20052
+29  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.00          rpm:0.07        pos:-20051
+30  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.00          rpm:0.00        pos:-20051
+31  esp32_enc_sing  odom(cm):-80.84 lin(cm/s):0.00          rpm:0.00        pos:-20051
+
+---------------------------------------------------
+
+0   esp32_enc_half  odom(cm):-17.08         lin(cm/s):0.00          rpm:0.00        pos:-8474
+1   esp32_enc_half  odom(cm):-18.98         lin(cm/s):-16.39        rpm:-406.49     pos:-9192
+2   esp32_enc_half  odom(cm):-24.54         lin(cm/s):-90.47        rpm:-2243.90    pos:-11917
+3   esp32_enc_half  odom(cm):-30.32         lin(cm/s):-94.71        rpm:-2349.18    pos:-14768
+4   esp32_enc_half  odom(cm):-36.70         lin(cm/s):-103.64       rpm:-2570.73    pos:-17920
+5   esp32_enc_half  odom(cm):-43.07         lin(cm/s):-103.61       rpm:-2569.92    pos:-21072
+6   esp32_enc_half  odom(cm):-49.69         lin(cm/s):-107.71       rpm:-2671.54    pos:-24326
+7   esp32_enc_half  odom(cm):-56.36         lin(cm/s):-117.81       rpm:-2922.12    pos:-27904
+8   esp32_enc_half  odom(cm):-63.89         lin(cm/s):-122.46       rpm:-3037.40    pos:-31646
+9   esp32_enc_half  odom(cm):-71.17         lin(cm/s):-118.49       rpm:-2939.02    pos:-35290
+10  esp32_enc_half  odom(cm):-75.11         lin(cm/s):-64.02        rpm:-1587.80    pos:-37249
+11  esp32_enc_half  odom(cm):-78.20         lin(cm/s):-50.08        rpm:-1242.28    pos:-38760
+12  esp32_enc_half  odom(cm):-83.44         lin(cm/s):-78.75        rpm:-1953.38    pos:-41242
+13  esp32_enc_half  odom(cm):-90.19         lin(cm/s):-119.49       rpm:-2963.72    pos:-44686
+14  esp32_enc_half  odom(cm):-98.01         lin(cm/s):-116.68       rpm:-2894.03    pos:-48366
+15  esp32_enc_half  odom(cm):-105.19        lin(cm/s):-116.69       rpm:-2894.31    pos:-51850
+16  esp32_enc_half  odom(cm):-111.21        lin(cm/s):-98.74        rpm:-2449.18    pos:-54918
+17  esp32_enc_half  odom(cm):-112.12        lin(cm/s):-14.87        rpm:-368.85     pos:-55618
+18  esp32_enc_half  odom(cm):-112.09        lin(cm/s):0.50          rpm:12.40       pos:-55604
+19  esp32_enc_half  odom(cm):-112.07        lin(cm/s):0.33          rpm:8.26        pos:-55594
+20  esp32_enc_half  odom(cm):-112.06        lin(cm/s):0.15          rpm:3.60        pos:-55589
+21  esp32_enc_half  odom(cm):-112.06        lin(cm/s):0.07          rpm:1.65        pos:-55587
+22  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.03          rpm:0.83        pos:-55586
+23  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.03          rpm:0.83        pos:-55585
+24  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.00          rpm:0.00        pos:-55585
+25  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.02          rpm:0.45        pos:-55584
+26  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.00          rpm:0.00        pos:-55584
+27  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.01          rpm:0.19        pos:-55583
+28  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.00          rpm:0.00        pos:-55583
+29  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.00          rpm:0.07        pos:-55582
+30  esp32_enc_half  odom(cm):-112.05        lin(cm/s):0.00          rpm:0.00        pos:-55582
+31  esp32_enc_half  odom(cm):-112.04        lin(cm/s):0.00          rpm:0.02        pos:-55581
+
+---------------------------------------------------
+
+0   esp32_enc_full  odom(cm):-26.33         lin(cm/s):-0.00         rpm:-0.00       pos:-26126
+1   esp32_enc_full  odom(cm):-28.24         lin(cm/s):-34.41        rpm:-853.60     pos:-27561
+2   esp32_enc_full  odom(cm):-33.81         lin(cm/s):-182.55       rpm:-4527.87    pos:-33014
+3   esp32_enc_full  odom(cm):-39.60         lin(cm/s):-189.66       rpm:-4704.10    pos:-38714
+4   esp32_enc_full  odom(cm):-45.97         lin(cm/s):-207.32       rpm:-5142.28    pos:-45012
+5   esp32_enc_full  odom(cm):-52.35         lin(cm/s):-207.26       rpm:-5140.65    pos:-51313
+6   esp32_enc_full  odom(cm):-58.96         lin(cm/s):-212.97       rpm:-5282.26    pos:-57802
+7   esp32_enc_full  odom(cm):-66.16         lin(cm/s):-234.07       rpm:-5805.69    pos:-64896
+8   esp32_enc_full  odom(cm):-73.48         lin(cm/s):-238.00       rpm:-5903.25    pos:-72166
+9   esp32_enc_full  odom(cm):-79.56         lin(cm/s):-197.95       rpm:-4909.76    pos:-78420
+10  esp32_enc_full  odom(cm):-81.27         lin(cm/s):-55.53        rpm:-1377.24    pos:-80637
+11  esp32_enc_full  odom(cm):-82.94         lin(cm/s):-54.25        rpm:-1345.53    pos:-81940
+12  esp32_enc_full  odom(cm):-86.37         lin(cm/s):-111.54       rpm:-2766.67    pos:-85509
+13  esp32_enc_full  odom(cm):-93.59         lin(cm/s):-234.69       rpm:-5821.14    pos:-92142
+14  esp32_enc_full  odom(cm):-100.31        lin(cm/s):-216.41       rpm:-5367.74    pos:-99090
+15  esp32_enc_full  odom(cm):-107.39        lin(cm/s):-230.30       rpm:-5712.20    pos:-105854
+16  esp32_enc_full  odom(cm):-113.40        lin(cm/s):-196.86       rpm:-4882.79    pos:-111983
+17  esp32_enc_full  odom(cm):-114.28        lin(cm/s):-29.29        rpm:-726.45     pos:-113382
+18  esp32_enc_full  odom(cm):-114.25        lin(cm/s):1.00          rpm:24.79       pos:-113354
+19  esp32_enc_full  odom(cm):-114.23        lin(cm/s):0.63          rpm:15.70       pos:-113334
+20  esp32_enc_full  odom(cm):-114.22        lin(cm/s):0.27          rpm:6.61        pos:-113325
+21  esp32_enc_full  odom(cm):-114.22        lin(cm/s):0.17          rpm:4.13        pos:-113320
+22  esp32_enc_full  odom(cm):-114.22        lin(cm/s):0.07          rpm:1.65        pos:-113318
+23  esp32_enc_full  odom(cm):-114.22        lin(cm/s):0.03          rpm:0.83        pos:-113317
+24  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.03          rpm:0.83        pos:-113316
+25  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.02          rpm:0.45        pos:-113315
+26  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.01          rpm:0.31        pos:-113314
+27  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.01          rpm:0.19        pos:-113313
+28  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.00          rpm:0.12        pos:-113312
+29  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.00          rpm:0.07        pos:-113311
+30  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.00          rpm:0.03        pos:-113310
+31  esp32_enc_full  odom(cm):-114.21        lin(cm/s):0.00          rpm:0.02        pos:-113309
+
+---------------------------------------------------

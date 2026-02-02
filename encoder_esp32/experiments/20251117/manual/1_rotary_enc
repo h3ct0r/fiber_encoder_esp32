@@ -1,0 +1,13 @@
+11357 rotary_enc      odom(cm):0.47   lin(cm/s):173160640.00  rpm:4294967295.00       pos:116           diff:116
+11479 rotary_enc      odom(cm):3.42   lin(cm/s):173160640.00  rpm:4294967295.00       pos:849           diff:733
+11602 rotary_enc      odom(cm):9.67   lin(cm/s):173160640.00  rpm:4294967295.00       pos:2397          diff:1548
+11725 rotary_enc      odom(cm):17.24  lin(cm/s):173160640.00  rpm:4294967295.00       pos:4276          diff:1879
+11849 rotary_enc      odom(cm):25.02  lin(cm/s):173160640.00  rpm:4294967295.00       pos:6206          diff:1930
+11971 rotary_enc      odom(cm):32.16  lin(cm/s):173160640.00  rpm:4294967295.00       pos:7977          diff:1771
+12094 rotary_enc      odom(cm):38.42  lin(cm/s):173160640.00  rpm:4294967295.00       pos:9529          diff:1552
+12216 rotary_enc      odom(cm):43.76  lin(cm/s):173160640.00  rpm:4294967295.00       pos:10853         diff:1324
+12348 rotary_enc      odom(cm):47.75  lin(cm/s):173160640.00  rpm:4294967295.00       pos:11844         diff:991
+12480 rotary_enc      odom(cm):50.46  lin(cm/s):120.95        rpm:3000.00             pos:12516         diff:672
+12600 rotary_enc      odom(cm):50.52  lin(cm/s):3.87          rpm:96.00               pos:12531         diff:15
+12721 rotary_enc      odom(cm):50.44  lin(cm/s):24.19         rpm:600.00              pos:12511         diff:-20
+12842 rotary_enc      odom(cm):50.43  lin(cm/s):4.03          rpm:100.00              pos:12509         diff:-2

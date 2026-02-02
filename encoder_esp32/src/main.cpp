@@ -1,177 +1,199 @@
 #include <Arduino.h>
 #include <RotaryEncoder.h>
-#include <U8g2lib.h>
+#include <ESP32Encoder.h>
+#include <micro_ros_platformio.h>
+#include <rcl/rcl.h>
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+#include <std_msgs/msg/float32.h>
 
-#define OLED_RESET U8X8_PIN_NONE  // Reset pin
-#define OLED_SDA 5
-#define OLED_SCL 6
-#define LED_BUILTIN 8
-
-#define ENCODER0PINA 9                // white A
-#define ENCODER0PINB 10               // green B
+#define ENCODER0PINA 12               // white A
+#define ENCODER0PINB 14               // green B
 #define CPR 600                       // encoder cycles per revolution
-#define CLOCKWISE 1                   // direction constant
-#define COUNTER_CLOCKWISE -1          // direction constant
-#define POSITION_COMPUTE_INTERVAL 10  // milliseconds
-#define OLED_COMPUTE_INTERVAL 500     // milliseconds
-#define SHAFT_RADIUS_CM 0.385         // centimeters
+#define WHEEL_DIAMETER_CM 0.755        // centimeters
+#define ENVIRONMENT "prod" // Change to "prod" to enable ROS publishing
+#define ROS_PUBLISH_INTERVAL 1000 // Publish every 1 second
 
-// variables modified by interrupt handler must be declared as volatile
-volatile long encoder0Position = 0;
-volatile unsigned long encoder0intReceived = 0;
-volatile long long absoluteEncoder0intReceived = 0;
 
-// track direction: -1 = counter-clockwise; 1 = clockwise
-short currentDirection = CLOCKWISE;
+RotaryEncoder *rotary_enc = nullptr;
+volatile int last_rotary_enc_pos = 0;
 
-// track last position so we know whether it's worth printing new output
-unsigned long previous0Position = 0;
-unsigned long previous0intReceived = 0;
-volatile long long previous0AbsoluteEncoder0intReceived = 0;
+ESP32Encoder *esp32_enc_sing = nullptr;
+volatile int last_esp32_enc_sing_pos = 0;
 
-unsigned long prevPositionComputeTime = 0;
-unsigned long prevWheelComputeTime = 0;
-unsigned long prevServoComputeTime = 0;
-unsigned long prevOledComputeTime = 0;
-unsigned long dt_omega = 0;
+ESP32Encoder *esp32_enc_half = nullptr;
+volatile int last_esp32_enc_half_pos = 0;
 
-// Latest RPM
-double rpm0 = 0;
-double odom_cm = 0;
-volatile unsigned char prev_reading = 0;
-volatile unsigned char curr_reading = 0;
+ESP32Encoder *esp32_enc_full = nullptr;
+volatile int last_esp32_enc_full_pos = 0;
 
-int motor_state = 0;
+volatile unsigned long last_change_time = 0;
 
-// Quadrature Encoder Matrix from OddBot
-const int QEM[16] = {0, -1, 1, 2,
-                     1, 0, 2, -1,
-                     -1, 2, 0, 1,
-                     2, 1, -1, 0};
-
-U8G2_SSD1306_72X40_ER_F_HW_I2C u8g2(U8G2_R0, OLED_RESET, OLED_SCL, OLED_SDA);
-int c = 0;
-
-RotaryEncoder *encoder = nullptr;
+// micro-ROS objects
+rclc_support_t support;
+rcl_allocator_t allocator;
+rcl_node_t node;
+rcl_publisher_t publisher;
+std_msgs__msg__Float32 odometry_msg;
+long last_publish_time = 0;
 
 void checkPosition() {
-    encoder->tick();
-}
-
-void handle_oled() {
-    // 18 chars per line, 10px of height per line
-    u8g2.clearBuffer();
-    // u8g2.clearDisplay();
-
-    // u8g2.setFont(u8g2_font_8x13_tr);
-    // u8g2.setFont(u8g2_font_4x6_tr);
-    u8g2.setFont(u8g2_font_5x7_mf);
-
-    char buffer[20];
-    snprintf(buffer, sizeof(buffer), "RPM: %.2lf", rpm0);
-    u8g2.drawStr(0, 10, buffer);
-
-    snprintf(buffer, sizeof(buffer), "RPS: %.2lf", rpm0 / 60.0);
-    u8g2.drawStr(0, 20, buffer);
-
-    snprintf(buffer, sizeof(buffer), "ODOM: %.3lfm", odom_cm / 100.0);
-    u8g2.drawStr(0, 30, buffer);
-
-    u8g2.sendBuffer();
-
-    prevOledComputeTime = millis();
+    rotary_enc->tick();
 }
 
 void setup() {
-    encoder = new RotaryEncoder(ENCODER0PINA, ENCODER0PINB, RotaryEncoder::LatchMode::FOUR3);
-    attachInterrupt(digitalPinToInterrupt(ENCODER0PINA), checkPosition, CHANGE);
-    attachInterrupt(digitalPinToInterrupt(ENCODER0PINB), checkPosition, CHANGE);
-
     Serial.begin(115200);
+    /**
+     * During development, several methods of reading the encoder are compared:
+     * 1. Using the RotaryEncoder library with interrupts
+     * 2. Using the ESP32Encoder library in single edge mode
+     * 3. Using the ESP32Encoder library in half quadrature mode
+     * 4. Using the ESP32Encoder library in full quadrature mode
+     * 
+     * No ROS topics are published in this mode; data is printed to Serial for
+     * analysis.
+     */
+    if (ENVIRONMENT == "dev") {
+        Serial.println("Starting...");
+        rotary_enc = new RotaryEncoder(ENCODER0PINA, ENCODER0PINB, RotaryEncoder::LatchMode::FOUR3);
+        attachInterrupt(digitalPinToInterrupt(ENCODER0PINA), checkPosition, CHANGE);
+        attachInterrupt(digitalPinToInterrupt(ENCODER0PINB), checkPosition, CHANGE);
+        rotary_enc->setCPR(CPR);
+        rotary_enc->setWheelDiameter(WHEEL_DIAMETER_CM);
+        last_rotary_enc_pos = rotary_enc->getPosition();
+    
+        ESP32Encoder::useInternalWeakPullResistors = puType::up;
+    
+        esp32_enc_sing = new ESP32Encoder(CPR, 50, false);
+        esp32_enc_sing->attachSingleEdge(ENCODER0PINA, ENCODER0PINB);
+        esp32_enc_sing->clearCount();
+        esp32_enc_sing->setCPR(CPR);
+        esp32_enc_sing->setWheelDiameter(WHEEL_DIAMETER_CM);
+        last_esp32_enc_sing_pos = esp32_enc_sing->getCount();
+    
+        esp32_enc_half = new ESP32Encoder(CPR, 50, false);
+        esp32_enc_half->attachHalfQuad(ENCODER0PINA, ENCODER0PINB);
+        esp32_enc_half->clearCount();
+        esp32_enc_half->setCPR(CPR);
+        esp32_enc_half->setWheelDiameter(WHEEL_DIAMETER_CM);
+        last_esp32_enc_half_pos = esp32_enc_half->getCount();
+    
+        esp32_enc_full = new ESP32Encoder(CPR, 50, false);
+        esp32_enc_full->attachFullQuad(ENCODER0PINA, ENCODER0PINB);
+        esp32_enc_full->clearCount();
+        esp32_enc_full->setCPR(CPR);
+        esp32_enc_full->setWheelDiameter(WHEEL_DIAMETER_CM);
+        last_esp32_enc_full_pos = esp32_enc_full->getCount();
+    } else {
+        /**
+         * In production mode, only the ESP32Encoder library in single edge mode
+         * is used, and encoder data is published to a ROS topic.
+         */
+        ESP32Encoder::useInternalWeakPullResistors = puType::up;
+        esp32_enc_sing = new ESP32Encoder(CPR, 50, false);
+        esp32_enc_sing->attachSingleEdge(ENCODER0PINA, ENCODER0PINB);
+        esp32_enc_sing->clearCount();
+        esp32_enc_sing->setCPR(CPR);
+        esp32_enc_sing->setWheelDiameter(WHEEL_DIAMETER_CM);
 
-    u8g2.begin();
-    u8g2.setContrast(255);     // set contrast to maximum
-    u8g2.setBusClock(400000);  // 400kHz I2C
+        // Initialize micro-ROS
+        set_microros_serial_transports(Serial);
+        delay(2000);
 
-    pinMode(LED_BUILTIN, OUTPUT);
-
-    // while (!Serial);
-    Serial.println("START OLED MODULE");
+        allocator = rcl_get_default_allocator();
+        rclc_support_init(&support, 0, NULL, &allocator);
+        rclc_node_init_default(&node, "theter_odometry_node", "", &support);
+        rclc_publisher_init_default(
+            &publisher,
+            &node,
+            ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float32),
+            "theter_odometry_cm");
+    }
 }
 
 void loop() {
-    if (millis() - prevOledComputeTime > OLED_COMPUTE_INTERVAL)
-        handle_oled();
+    if (ENVIRONMENT == "dev") {
 
-    int newPos = encoder->getPosition();
-    if (encoder0Position != newPos) {
-        Serial.print("pos:");
-        Serial.print(newPos);
-        Serial.print(" dir:");
-        Serial.print((int)(encoder->getDirection()));
-        Serial.print(" rpm:");
-        Serial.print((int)(encoder->getRPM()));
-        Serial.print(" odom:");
-        odom_cm = ((2 * SHAFT_RADIUS_CM * PI) * (newPos / (CPR * 1.0)));
-        Serial.println(odom_cm);
+        int rotary_enc_pos = rotary_enc->getPosition();
+        int esp32_enc_sing_pos = esp32_enc_sing->getCount();
+        int esp32_enc_half_pos = esp32_enc_half->getCount();
+        int esp32_enc_full_pos = esp32_enc_full->getCount();
+    
+        if (
+            rotary_enc_pos != last_rotary_enc_pos
+            || esp32_enc_sing_pos != last_esp32_enc_sing_pos
+            || esp32_enc_half_pos != last_esp32_enc_half_pos
+            || esp32_enc_full_pos != last_esp32_enc_full_pos
+        ) {
+            double rotary_enc_rpm = rotary_enc->getRPM();
+            double rotary_enc_odom_cm = rotary_enc->getOdometry();
+            float rotary_enc_linearspeed = rotary_enc->getLinearSpeed();
+            Serial.println("rotary_enc\todom(cm):" + String((double)rotary_enc_odom_cm) + "\tlin(cm/s):" + String(rotary_enc_linearspeed) + "\trpm:" + String(rotary_enc_rpm) + "\tpos:" + String(rotary_enc_pos) + "\tdiff:" + String(rotary_enc_pos-last_rotary_enc_pos));
+        
+            double esp32_enc_sing_rpm = esp32_enc_sing->getRPM();
+            long double esp32_enc_sing_odom = esp32_enc_sing->getOdometry();
+            float esp32_enc_sing_linearspeed = esp32_enc_sing->getLinearSpeed();
+            Serial.println("esp32_enc_sing\todom(cm):" + String((double)esp32_enc_sing_odom) + "\tlin(cm/s):" + String(esp32_enc_sing_linearspeed) + "\trpm:" + String(esp32_enc_sing_rpm) + "\tpos:" + String(esp32_enc_sing_pos) + "\tdiff:" + String(esp32_enc_sing_pos-last_esp32_enc_sing_pos));
+    
+            double esp32_enc_half_rpm = esp32_enc_half->getRPM();
+            long double esp32_enc_half_odom = esp32_enc_half->getOdometry();
+            float esp32_enc_half_linearspeed = esp32_enc_half->getLinearSpeed();
+            Serial.println("esp32_enc_half\todom(cm):" + String((double)esp32_enc_half_odom/2) + "\tlin(cm/s):" + String(esp32_enc_half_linearspeed) + "\trpm:" + String(esp32_enc_half_rpm) + "\tpos:" + String(esp32_enc_half_pos) + "\tdiff:" + String(esp32_enc_half_pos-last_esp32_enc_half_pos));
+    
+            double esp32_enc_full_rpm = esp32_enc_full->getRPM();
+            long double esp32_enc_full_odom = esp32_enc_full->getOdometry();
+            float esp32_enc_full_linearspeed = esp32_enc_full->getLinearSpeed();
+            Serial.println("esp32_enc_full\todom(cm):" + String((double)esp32_enc_full_odom/4) + "\tlin(cm/s):" + String(esp32_enc_full_linearspeed) + "\trpm:" + String(esp32_enc_full_rpm) + "\tpos:" + String(esp32_enc_full_pos) + "\tdiff:" + String(esp32_enc_full_pos-last_esp32_enc_full_pos));
+    
+            last_rotary_enc_pos = rotary_enc_pos;
+            last_esp32_enc_sing_pos = esp32_enc_sing_pos;
+            last_esp32_enc_half_pos = esp32_enc_half_pos;
+            last_esp32_enc_full_pos = esp32_enc_full_pos;
+            last_change_time = millis();
+    
+            Serial.println(
+                String(last_change_time) + ","
+                + String((double)rotary_enc_odom_cm) + ","
+                + String((double)esp32_enc_sing_odom) + ","
+                + String((double)esp32_enc_half_odom/2) + ","
+                + String((double)esp32_enc_full_odom/4)
+            );
+    
+            Serial.println(String(last_change_time) + " ---------------------------------------------------");
+        }
+    
+        // If the encoders positions didn't change for 2 seconds, reset them
+        if (
+            millis() - last_change_time > 2000
+            && (rotary_enc_pos != 0 || esp32_enc_sing_pos != 0 || esp32_enc_half_pos != 0 || esp32_enc_full_pos != 0)
+        ) {
+            rotary_enc->reset();
+            esp32_enc_sing->reset();
+            esp32_enc_half->reset();
+            esp32_enc_full->reset();
+            last_rotary_enc_pos = 0;
+            last_esp32_enc_sing_pos = 0;
+            last_esp32_enc_half_pos = 0;
+            last_esp32_enc_full_pos = 0;
+            last_change_time = millis();
+            Serial.println("Encoders reset due to inactivity.");
+        }
 
-        encoder0Position = newPos;
+        delay(100);
+    } else {
+        // Production mode: publish odometry data to ROS topic
+
+        // Check if it's time to publish
+        if (millis() - last_publish_time > ROS_PUBLISH_INTERVAL) {
+            long double esp32_enc_sing_odom = esp32_enc_sing->getOdometry();
+            odometry_msg.data = (float)esp32_enc_sing_odom;
+            rcl_publish(&publisher, &odometry_msg, NULL);
+            // Log for debugging on the serial monitor
+            Serial.print("Theter odometry: ");
+            Serial.print(odometry_msg.data);
+            Serial.println(" cm");
+            last_publish_time = millis();
+        }
+        delay(10);
     }
-
-    // if (millis() - prevPositionComputeTime < POSITION_COMPUTE_INTERVAL)
-    //     return;
-
-    // dt_omega = millis() - prevWheelComputeTime;
-    // double changeTicks0 = encoder0intReceived - previous0intReceived;
-    // rpm0 = (changeTicks0 * (60000.0 / dt_omega)) / CPR;
-    // odom_cm = ((2 * SHAFT_RADIUS_MM * PI) * (absoluteEncoder0intReceived / (CPR * 1.0))) / 10;
-
-    // if (absoluteEncoder0intReceived < previous0AbsoluteEncoder0intReceived) {
-    //     currentDirection = COUNTER_CLOCKWISE;
-    // } else if (absoluteEncoder0intReceived > previous0AbsoluteEncoder0intReceived) {
-    //     currentDirection = CLOCKWISE;
-    // }
-
-    // if (encoder0Position != previous0Position) {
-    //     Serial.print("pos:");
-    //     // Serial.print(encoder0Position, 4);
-    //     char temp[6];
-    //     sprintf(temp, "%04d", encoder0Position);
-    //     Serial.print(temp);
-
-    //     // Serial.print("\t dir:");
-    //     // Serial.print(currentDirection); //== CLOCKWISE ? "CW" : "CCW"
-    //     Serial.print("\tcounter:");
-    //     Serial.print(encoder0intReceived, DEC);
-    //     Serial.print("\t abscounter:");
-    //     Serial.print(absoluteEncoder0intReceived, DEC);
-    //     Serial.print("\t prevabscounter:");
-    //     Serial.print(previous0AbsoluteEncoder0intReceived, DEC);
-    //     // Serial.print("\t diff ticks:");
-    //     // Serial.print(changeTicks0, DEC);
-    //     // Serial.print("\t lrpm:");
-    //     // Serial.print(lrpm);
-    //     // Serial.print("\t lrps:");
-    //     // Serial.println(lrpm / 60.0);
-    //     // Serial.print("pos0:");
-    //     // Serial.print(encoder0Position, DEC);
-    //     // Serial.print("\t\tpos1:");
-    //     // Serial.print(encoder1Position, DEC);
-    //     Serial.print("\tdir:");
-    //     Serial.print(currentDirection);  //== CLOCKWISE ? "CW" : "CCW"
-    //     Serial.print("\trpm0:");
-    //     Serial.print(rpm0, 2);
-    //     // Serial.print("\t rps0:");
-    //     // Serial.print(rpm0 / 60, 2);
-    //     Serial.print("\todom_cm:");
-    //     Serial.print(odom_cm, 2);
-    //     Serial.println();
-    // }
-
-    // previous0Position = encoder0Position;
-    // previous0intReceived = encoder0intReceived;
-    // previous0AbsoluteEncoder0intReceived = absoluteEncoder0intReceived;
-
-    // prevWheelComputeTime = millis();
-    // prevPositionComputeTime = millis();
 }
